@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ecom admin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="index.html">Ecom Admin</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i></a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu alert-dropdown">
+                        <li>
+                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
+                        </li>
+
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">View All</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Admin<b class="caret"></b></a>
+                    <ul class="dropdown-menu dropDown-width">
+                        <li>
+                            <a href="form.html"><i class="fa fa-fw fa-calendar"></i> Create an Event</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Message Center</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+<header class="container">
+    <div class="col-md-8"> <!-- Page Title -->
+        <h1>Message Center</h1>
+    </div> <!-- Breadcrumbs -->
+    <div class="col-md-12" style="padding-top: 2%;">
+        <ol class="breadcrumb" >
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Events</a></li>
+            <li class="active">Message Center</li>
+        </ol>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 " > <!-- Select Groups Panel -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">(1) Select Groups</h3>
+                </div>
+                <div class="panel-body container" style = "height:245px" id="selectGroups">
+                    <h5>Select Your Groups</h5>
+                    <form>
+                        <input type="checkbox" name="all">  All<br>
+                        <input type="checkbox" name="confirmed">  Confirmed<br>
+                        <input type="checkbox" name="unconfirmed">  Unconfirmed<br>
+                        <input type="checkbox" name="other">  Other Group
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6"> <!-- Message Text Panel -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">(2) Message Text</h3>
+                </div>
+                <div class="panel-body container" id="messageText">
+                    <form>
+                        <h5>Message Title</h5>
+                        <input type="text" name="messagetitle"><br>
+                        <h5>Enter your message here.</h5>
+                        <textarea rows="4" cols="50">
+
+                        </textarea>
+                        <div id="sendMessage">
+                            <button id="sendNow" >Send Now</button>
+                            <button id="sendLater">Send Later</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row col-md-12"> <!-- Message Text Panel -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">(3) Automated Messages </h3>
+                </div>
+                <div class="panel-body container" id="messageText">
+                    <form>
+                        <div class="container">
+                            <h5 class="col-md-3">Message Title</h5>
+                            <input type="text" name="messagetitle"><br>
+                        </div>
+                        <div class="container">
+                            <div class="col-md-6">
+                            <h5>Enter your message here.</h5>
+                            <textarea rows="4" cols="50">
+
+                            </textarea>
+                            </div>
+                            <div class="col-md-6">
+                            <h5><em>In response to</em> (initial user message)</h5>
+                            <textarea rows="1" cols="50">
+
+                            </textarea>
+                                <textarea rows="1" cols="50">
+
+                            </textarea>
+                                <textarea rows="1" cols="50">
+
+                            </textarea>
+                            </div>
+                        </div>
+                        <div id="sendMessage">
+                            <button id="sendNow" >Send Now</button>
+                            <button id="sendLater">Send Later</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col-md-12"> <!-- Message Logs Panel -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">(4) Message Logs</h3>
+                </div>
+                <div class="panel-body" id="messageLog">
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li><a href="#scheduled" class="active" role="tab" data-toggle="tab">Scheduled Messages</a></li>
+                            <li><a href="#past" role="tab" data-toggle="tab">Past Messages</a></li>
+                            <li><a href="#auto" role="tab" data-toggle="tab">Auto-Attendant</a></li>
+                        </ul>
+                    </div>
+                    <div class="panel-body scrollable tab-content">
+                        <div class="tab-pane active" id="scheduled">
+                            <div class="table-responsive">
+                                <table align="left" class="table">
+                                    <thead>
+                                    <td><strong>Message Title</strong></td>
+                                    <td><strong>Groups</strong></td>
+                                    <td><strong>Time</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Conference Location Change Alert</td>
+                                        <td>Confirmed, Unconfirmed, Other Group</td>
+                                        <td>1/11/2011 10:00 AM</td>
+                                        <td><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                                        <td><button class="btn btn-danger"> - </button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lunch Reminder</td>
+                                        <td>Confirmed</td>
+                                        <td>2/2/2022 12:00 PM</td>
+                                        <td><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                                        <td><button class="btn btn-danger"> - </button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thanks for Attending!</td>
+                                        <td>Confirmed, Other Group</td>
+                                        <td>3/3/2033 4:00 PM</td>
+                                        <td><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                                        <td><button class="btn btn-danger"> - </button></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="past">
+                            <table align="left" class="table">
+                                <thead>
+                                <td><strong>Message Title</strong></td>
+                                <td><strong>Groups</strong></td>
+                                <td><strong>Time</strong></td>
+                                <td></td>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Title</td>
+                                    <td>people</td>
+                                    <td>Date and Time</td>
+                                    <td><button class="btn btn-danger"> - </button></td>
+                                </tr>
+                                <tr>
+                                    <td>Reminder</td>
+                                    <td>Confirmed</td>
+                                    <td>2/2/2022 12:00 PM</td>
+                                    <td><button class="btn btn-danger"> - </button></td>
+                                </tr>
+                                <tr>
+                                    <td>Thank You Note</td>
+                                    <td>Confirmed, Other Group</td>
+                                    <td>3/3/2033 4:00 PM</td>
+                                    <td><button class="btn btn-danger"> - </button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="auto">
+                            <table align="left" class="table">
+                                <thead>
+                                <td><strong>Message Title</strong></td>
+                                <td><strong>Groups</strong></td>
+                                <td><strong>Time</strong></td>
+                                <td></td>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Message</td>
+                                    <td>Recipients</td>
+                                    <td>Date and Time</td>
+                                    <td><button class="btn btn-danger"> - </button></td>
+                                </tr>
+                                <tr>
+                                    <td>Message</td>
+                                    <td>Recipients</td>
+                                    <td>2/2/2022 12:00 PM</td>
+                                    <td><button class="btn btn-danger"> - </button></td>
+                                </tr>
+                                <tr>
+                                    <td>Message</td>
+                                    <td>Recipients</td>
+                                    <td>3/3/2033 4:00 PM</td>
+                                    <td><button class="btn btn-danger"> - </button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .panel-heading span {
+        margin-top: -20px;
+        font-size: 15px;
+    }
+    .row {
+        margin-top: 40px;
+        padding: 0 10px;
+    }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+    $(function(){
+        $('#selectGroups').slimScroll({
+            height: '250px',
+            alwaysVisible: true
+        });
+
+        $('#messageText').slimScroll({
+            height: '250px',
+            alwaysVisible: true
+        });
+
+        $('#messageLog').slimScroll({
+            height: '500px',
+            alwaysVisible: true
+        });
+
+    });
+
+    $('#myTab a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+    });
+
+    $('#myTab a[href="#scheduled"]').tab('show');
+
+    $('#myTab a[href="#past"]').tab('show');
+
+    $('#myTab a[href="#auto"]').tab('show')
+</script>
+             </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
